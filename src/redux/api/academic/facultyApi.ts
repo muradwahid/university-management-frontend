@@ -4,7 +4,7 @@ import { baseApi } from "../baseApi";
 
 const ACADEMIC_FACULTY_URL = "/academic-faculties";
 export const academicFacultyApi = baseApi.injectEndpoints({
-  endpoints: (build) => ({
+  endpoints: (build: any) => ({
     academicFaculties: build.query({
       query: (arg: Record<string, any>) => {
         return {
@@ -29,7 +29,7 @@ export const academicFacultyApi = baseApi.injectEndpoints({
       providesTags: [tagTypes.academicFaculty],
     }),
     addAcademicFaculty: build.mutation({
-      query: (data) => ({
+      query: (data: any) => ({
         url: ACADEMIC_FACULTY_URL,
         method: "POST",
         data,
@@ -37,7 +37,7 @@ export const academicFacultyApi = baseApi.injectEndpoints({
       invalidatesTags: [tagTypes.academicFaculty],
     }),
     updateAcademicFaculty: build.mutation({
-      query: (data) => ({
+      query: (data: any) => ({
         url: `${ACADEMIC_FACULTY_URL}/${data?.id}`,
         method: "PATCH",
         data: data.body,
@@ -45,7 +45,7 @@ export const academicFacultyApi = baseApi.injectEndpoints({
       invalidatesTags: [tagTypes.academicFaculty],
     }),
     deleteAcademicFaculty: build.mutation({
-      query: (id) => ({
+      query: (id: string) => ({
         url: `${ACADEMIC_FACULTY_URL}/${id}`,
         method: "DELETE",
       }),

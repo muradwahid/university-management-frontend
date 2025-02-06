@@ -18,6 +18,7 @@ const CreateDepartment = () => {
     page: 1,
   });
 
+  //@ts-ignore
   const facultiesOptions: any = facultiesData?.academicFaculties?.map(
     (data: any) => {
       return {

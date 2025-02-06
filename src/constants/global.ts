@@ -36,3 +36,25 @@ export const acSemesterOptions = [
   { label: "Autumn 2023", value: "autumn 2023" },
   { label: "Summer 2023", value: "summer 2023" },
 ];
+
+const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export const monthOptions = monthNames.map((month: string) => {
+  return {
+    label: month,
+    value: month,
+  };
+});
